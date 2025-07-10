@@ -1,14 +1,24 @@
-const posts = require("../data/posts");
+/* const posts = require("../data/posts"); */
+
+const connection = require("../data/db");
 
 function index(req, res) {
-  let filteredMenu = posts;
-  //prova per error (500) Umberto()
-  if (req.query.tags) {
-    filteredMenu = posts.filter((post) => post.tags.includes(req.query.tags));
-  }
-  /*  res.sendStatus(204); */
-  res.json(filteredMenu);
-  console.log(filteredMenu);
+  const sql = "SELECT * FROM posts;";
+
+  connection.query(sql, (err, results) => {
+    if (err) return res.status(500).json({ error: "Database query failed" });
+    
+    res.json(results);
+  });
+
+  // let filteredMenu = posts;
+  // //prova per error (500) Umberto()
+  // if (req.query.tags) {
+  //   filteredMenu = posts.filter((post) => post.tags.includes(req.query.tags));
+  // }
+  // /*  res.sendStatus(204); */
+  // res.json(filteredMenu);
+  // console.log(filteredMenu);
 }
 
 function show(req, res) {
