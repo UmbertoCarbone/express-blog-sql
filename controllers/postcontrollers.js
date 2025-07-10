@@ -24,6 +24,7 @@ function index(req, res) {
 function show(req, res) {
   // recuperiamo l'id dall' URL
   const id = req.params.id;
+  
   const sql = "SELECT * FROM posts WHERE id = ?";
   connection.query(sql, [id], (err, results) => {
     if (err) return res.status(500).json({ error: "Database query failed" });
@@ -51,7 +52,9 @@ function show(req, res) {
 
 function destroy(req, res) {
   // recuperiamo l'id dall' URL
-  const id = req.params;
+  const id = req.params.id;
+  console.log(id);
+  
   //Eliminiamo la pizza dal menu
   connection.query("DELETE FROM posts WHERE id = ?", [id], (err) => {
     if (err) return res.status(500).json({ error: "Failed to delete pizza" });
