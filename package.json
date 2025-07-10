@@ -1,0 +1,25 @@
+{
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch --env-file=.env server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UmbertoCarbone/express-blog-api-crud.git"
+  },
+  "keywords": [],
+  "author": "Carbone Umberto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UmbertoCarbone/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/UmbertoCarbone/express-blog-api-crud#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0"
+  }
+}
