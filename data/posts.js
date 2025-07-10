@@ -2,7 +2,7 @@ const PORT = process.env.PORT;
 
 const posts = [
   {
-    id: 1,
+    id:1 ,
     title: "Ciambellone",
     content: `Sarà che una volta le cose erano più semplici,
      ma erano anche molto buone. Come le crostate,
